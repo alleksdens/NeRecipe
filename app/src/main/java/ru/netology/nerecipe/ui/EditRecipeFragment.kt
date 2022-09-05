@@ -188,7 +188,8 @@ class EditRecipeFragment : Fragment() {
                         !editRecipeNameEditText.text.isNullOrBlank() &&
                         !editRecipeTimeEditText.text.isNullOrBlank() &&
                         ingredients.isNotEmpty() &&
-                        steps.isNotEmpty()
+                        steps.isNotEmpty() &&
+                        categories.isNotEmpty()
                     ) {
                         currentEditingRecipe.value = currentEditingRecipe.value?.copy(
                             title = editRecipeNameEditText.text.toString(),
@@ -211,11 +212,15 @@ class EditRecipeFragment : Fragment() {
                     } else if (ingredients.isEmpty()) {
                         editRecipeIngredientsEditText.requestFocus()
                         editRecipeIngredientsEditText.error =
-                            resources.getString(R.string.error_empty_ingredients)
+                            resources.getString(R.string.error_empty_time)
                     } else if (steps.isEmpty()) {
                         editRecipeStepsEditText.requestFocus()
                         editRecipeStepsEditText.error =
                             resources.getString(R.string.error_empty_steps)
+                    } else if (categories.isEmpty()) {
+                        editRecipeCategoriesWordTextView.requestFocus()
+                        editRecipeCategoriesWordTextView.error =
+                            resources.getString(R.string.error_empty_categories)
                     }
                 }
             }

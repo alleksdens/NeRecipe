@@ -194,7 +194,8 @@ class NewRecipeFragment : Fragment() {
                         !newRecipeNameEditText.text.isNullOrBlank() &&
                         !newRecipeTimeEditText.text.isNullOrBlank() &&
                         ingredients.isNotEmpty() &&
-                        steps.isNotEmpty()
+                        steps.isNotEmpty() &&
+                        categories.isNotEmpty()
                     ) {
                         currentNewRecipe.value = currentNewRecipe.value?.copy(
                             title = newRecipeNameEditText.text.toString(),
@@ -222,6 +223,10 @@ class NewRecipeFragment : Fragment() {
                         newRecipeStepsEditText.requestFocus()
                         newRecipeStepsEditText.error =
                             resources.getString(R.string.error_empty_steps)
+                    } else if (categories.isEmpty()) {
+                        newRecipeCategoriesWordTextView.requestFocus()
+                        newRecipeCategoriesWordTextView.error =
+                            resources.getString(R.string.error_empty_categories)
                     }
                 }
             }

@@ -67,10 +67,13 @@
 
             <TextView
                 android:id="@+id/newRecipeCategoriesWordTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="365dp"
+                android:layout_height="27dp"
                 android:layout_marginTop="@dimen/common_spacing"
+                android:breakStrategy="simple"
                 android:contentDescription="@string/categories_word_text_description"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:text="@string/categories_word"
                 android:textSize="@dimen/text_size_head"
                 android:textStyle="bold"
@@ -81,8 +84,8 @@
 
             <ImageButton
                 android:id="@+id/addCategoryImageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="67dp"
+                android:layout_height="61dp"
                 android:backgroundTint="@android:color/transparent"
                 android:contentDescription="@string/add_category_button_text_description"
                 app:layout_constraintStart_toStartOf="@id/newRecipeCategoriesWordTextView"
@@ -96,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/common_spacing"
                 app:layout_constraintEnd_toEndOf="@id/newRecipeImageView"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/addCategoryImageButton"
                 app:layout_constraintTop_toBottomOf="@id/addCategoryImageButton">
 
